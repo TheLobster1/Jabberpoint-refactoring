@@ -23,8 +23,7 @@ public class KeyController extends KeyAdapter {
 			case '+', KeyEvent.VK_PAGE_DOWN, KeyEvent.VK_DOWN, KeyEvent.VK_ENTER:
 				presentation.nextSlide();
 				break;
-			case KeyEvent.VK_UP, KeyEvent.VK_PAGE_UP:
-			case '-':
+			case KeyEvent.VK_UP, KeyEvent.VK_PAGE_UP, '-':
 				presentation.prevSlide();
 				break;
 			case 'q', 'Q':
