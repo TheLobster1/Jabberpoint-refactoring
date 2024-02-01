@@ -3,7 +3,7 @@
 ###### The code in it's current state does not show any presentations and I do not know why.
 
 Changelog was added after making changes, which is why some changes might not be mentioned and some might be simplified because I don't remember exactly what I did.
-Changelog:
+## Changelog:
 
 1. Removed unused variables from all classes
 2. Removed unused methods from all classes
