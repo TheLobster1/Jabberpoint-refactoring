@@ -40,6 +40,7 @@ public class MenuController extends MenuBar {
 	protected static final String SAVEFILE = "savedPresentation.xml";
 	
 	protected static final String IOEX = "IO Exception: ";
+	protected static final String JABVERSION = "Jabberpoint 1.6 - OU version";
 	protected static final String LOADERR = "Load Error";
 	protected static final String SAVEERR = "Save Error";
 
@@ -55,12 +56,18 @@ public class MenuController extends MenuBar {
 				Accessor xmlAccessor = Accessor.getAccessor(TESTFILE);
 				System.out.println(TESTFILE);
 				try {
-					MenuController.this.presentation = xmlAccessor.makeReader().read(TESTFILE);
+					Presentation tempPresentation = xmlAccessor.makeReader().read(TESTFILE);
+					//The application in its current state does not support new objects, so it has to loop through the
+					//slides adding them one by one.
+					for(int count = 0; count < tempPresentation.getSize(); count++) {
+						MenuController.this.presentation.append(tempPresentation.getSlide(count));
+					}
 					MenuController.this.presentation.setSlideNumber(0);
 				} catch (IOException exc) {
 					JOptionPane.showMessageDialog(parent, IOEX + exc, 
          			LOADERR, JOptionPane.ERROR_MESSAGE);
 				}
+
 				parent.repaint();
 			}
 		} );

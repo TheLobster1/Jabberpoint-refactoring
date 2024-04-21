@@ -33,8 +33,8 @@ public class JabberPoint {
 				fileName = "demo";
 			}
 			presentation = Accessor.getAccessor(fileName).makeReader().read(fileName);
-			presentation.setSlideNumber(0);
 			new SlideViewerFrame(JABVERSION, presentation);
+			presentation.setSlideNumber(0);
 		} catch (IOException ex) {
 			JOptionPane.showMessageDialog(null,
 					IOERR + ex, JABERR,

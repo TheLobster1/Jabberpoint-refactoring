@@ -17,7 +17,7 @@ public abstract class Accessor {
 
 	public static Accessor getAccessor(String fileName) {
 		String extension = fileName.substring(fileName.lastIndexOf(".") + 1).trim();
-		if(extension == "xml") {
+		if(extension.equals("xml")) {
 			return new XMLAccessor();
 		}
 		return new DemoPresentation();

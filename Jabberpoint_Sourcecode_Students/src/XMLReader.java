@@ -59,6 +59,7 @@ public class XMLReader extends Reader{
         catch (ParserConfigurationException pcx) {
             System.err.println(PCE);
         }
+        String text = "test";
         return presentation;
     }
 
